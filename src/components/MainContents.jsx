@@ -22,7 +22,7 @@ function MainContents() {
     const [timeEdu, setTimeEdu] = useState('2008 - 2011')
 
 // const [experienceFields, setExperienceFields] = useState([<Experience />]);
-// const [educationFields, setEducationFields] = useState([<Education />])
+const [educationFields, setEducationFields] = useState([<Education />])
 
 // function handleAddExperience(){
 //   setExperienceFields([...experienceFields, <Experience />]);
