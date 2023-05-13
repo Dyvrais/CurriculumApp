@@ -21,23 +21,46 @@ function MainContents() {
     const [degree, setDegree] = useState('Analista de datos')
     const [timeEdu, setTimeEdu] = useState('2008 - 2011')
 
-// const [experienceFields, setExperienceFields] = useState([<Experience />]);
-const [educationFields, setEducationFields] = useState([<Education />])
+    const [personalFields, setPersonalFields] = useState([
+    <PersonalInfo 
+        name={name} 
+        setName={setName}
+        handleNameChange={(e) => { setName(e.target.value) }}
+        cellphone={cellphone} 
+        setCellphone={setCellphone}
+        handlePhoneChange={(e) => { setCellphone(e.target.value) }}
+        email={email} 
+        setEmail={setEmail}
+        handleEmailChange={(e) => { setEmail(e.target.value) }}
+        address={address} 
+        setAddress={setAddress}
+        handleAddressChange={(e) => { setAddress(e.target.value) }}
+        age={age} 
+        setAge={setAge}
+        handleAgeChange={(e) => { setAge(e.target.value) }}
+        desc={desc} 
+        setDesc={setDesc}
+        handleDescChange={(e) => { setDesc(e.target.value) }}
+    />])
 
-// function handleAddExperience(){
-//   setExperienceFields([...experienceFields, <Experience />]);
-// }
+    const [experienceFields, setExperienceFields] = useState([
+    <Experience 
+        position={position} 
+        setPosition={setPosition}
+        handlePositionChange={(e) => { setPosition(e.target.value) }}
+        company={company}
+        setCompany={setCompany}
+        handleCompanyChange={(e) => { setCompany(e.target.value) }}
+        location={location}
+        setLocation={setLocation}
+        handleLocationChange={(e) => { setLocation(e.target.value) }}
+        timeExp={timeExp}
+        setTimeExp={setTimeExp}
+        handleTimeChange={(e) => { setTimeExp(e.target.value) }}
+    />]);
 
-// function handleAddEducation(){
-//   setEducationFields([...educationFields, <Education />]);
-// }
-
-  return (
-    <>
-      <h2>Informacion personal:</h2>
-      <PersonalInfo />
-      <h3>Experiencia:</h3>
-      <Education 
+    const [educationFields, setEducationFields] = useState([
+    <Education 
         institution={institution} 
         setInstitution={setInstitution}
         handleInstitutionChange={(e) => { setInstitution(e.target.value) }}
@@ -50,12 +73,40 @@ const [educationFields, setEducationFields] = useState([<Education />])
         timeEdu={timeEdu}
         setTimeEdu={setTimeEdu}
         handleTimeChange={(e) => { setTimeEdu(e.target.value) }}
-      />
-      {/* {experienceFields}
-      <button onClick={handleAddExperience}>Añadir</button>
+        />])
+
+    // function handleAddExperience(){
+    //   setExperienceFields([...experienceFields, <Experience />]);
+    // }
+
+    // function handleAddEducation(){
+    // setEducationFields([...educationFields, <Education />]);
+    // }
+
+  return (
+    <>
+      <h2>Informacion personal:</h2>
+      {personalFields}
+      <h3>Experiencia:</h3>
+      {experienceFields}
+            {/* <button onClick={handleAddExperience}>Añadir</button> */}
       <h3>Educación:</h3>
       {educationFields}
-      <button onClick={handleAddEducation}>Añadir</button> */}
+            {/* <button onClick={handleAddEducation}>Añadir</button> */}
+
+      <h3>{name}</h3>
+      <h3>{cellphone}</h3>
+      <h3>{email}</h3>
+      <h3>{address}</h3>
+      <h3>{age} años</h3>
+      <h3>{desc}</h3>
+        
+      <i>{position} - </i>
+      <i>{company} - </i>
+      <i>{location} - </i>
+      <i>{timeExp}</i>
+      
+
       <p>{institution}</p>
       <p>{city}</p>
       <p>{degree}</p>
