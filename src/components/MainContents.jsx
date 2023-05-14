@@ -85,21 +85,23 @@ function MainContents() {
 
   return (
     <>
-      <h2>Informacion personal:</h2>
+      <h2 className='font-bold text-2xl'>Informacion personal:</h2>
       {personalFields}
-      <h3>Experiencia:</h3>
+      <hr className="my-6 w-full border-b border-gray-700"/>
+      <h2 className='font-bold text-2xl'>Experiencia:</h2>
       {experienceFields}
             {/* <button onClick={handleAddExperience}>Añadir</button> */}
-      <h3>Educación:</h3>
+      <hr className="my-6 w-full border-b border-gray-700"/>
+      <h2 className='font-bold text-2xl'>Educación:</h2>
       {educationFields}
             {/* <button onClick={handleAddEducation}>Añadir</button> */}
-
-      <h3>{name}</h3>
+      <hr className="my-12 w-full border-b border-gray-700"/>
+      <h3 className='text-2xl'>{name}</h3>
       <h3>{cellphone}</h3>
       <h3>{email}</h3>
       <h3>{address}</h3>
       <h3>{age} años</h3>
-      <h3>{desc}</h3>
+      <p>{desc}</p>
         
       <i>{position} - </i>
       <i>{company} - </i>
@@ -107,10 +109,10 @@ function MainContents() {
       <i>{timeExp}</i>
       
 
-      <p>{institution}</p>
+      <p>Universidad: {institution}</p>
       <p>{city}</p>
-      <p>{degree}</p>
-      <p>{timeEdu}</p>
+      <p>Titulo: {degree}</p>
+      <p>Periodo: {timeEdu}</p>
     </>
   )
 }

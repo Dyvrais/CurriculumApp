@@ -5,7 +5,11 @@ export function InputField(props){
                 placeholder={props.placeholder} 
                 onChange={props.handleChange}
                 className={props.className}
-                type={props.type}>
+                type={props.type}
+                maxlength={props.maxlength}
+                min={props.min}
+                max={props.max}
+                >
             </input>
 
 }
